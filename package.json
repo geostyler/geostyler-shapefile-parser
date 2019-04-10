@@ -1,0 +1,64 @@
+{
+  "name": "geostyler-shapefile-parser",
+  "version": "0.0.1",
+  "description": "GeoStyler Data Parser implementation for Shapefile",
+  "main": "build/dist/ShapefileDataParser.js",
+  "types": "build/dist/ShapefileDataParser.d.ts",
+  "files": [
+    "build",
+    "index.d.ts",
+    "browser"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/terrestris/geostyler-shapefile-parser.git"
+  },
+  "keywords": [
+    "geostyler",
+    "parser",
+    "data",
+    "geojson"
+  ],
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/terrestris/geostyler-shapefile-parser/issues"
+  },
+  "homepage": "https://github.com/terrestris/geostyler-shapefile-parser#readme",
+  "dependencies": {
+    "@types/geojson": "7946.0.7",
+    "@types/jest": "24.0.11",
+    "@types/json-schema": "7.0.3",
+    "@types/node": "11.13.0",
+    "@types/shpjs": "3.4.0",
+    "geostyler-data": "1.0.0",
+    "geostyler-geojson-parser": "1.0.0",
+    "shpjs": "3.4.3"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && npm run build:browser",
+    "build:browser": "webpack --config browser-build.config.js",
+    "pretest": "npm run lint",
+    "test": "jest",
+    "lint": "tslint --project tsconfig.json --config tslint.json",
+    "release": "np --no-yarn && git push https://github.com/terrestris/geostyler-geojson-parser.git master --tags"
+  },
+  "devDependencies": {
+    "@babel/core": "7.4.3",
+    "@babel/plugin-proposal-class-properties": "7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.4.3",
+    "@babel/polyfill": "7.4.3",
+    "@babel/preset-env": "7.4.3",
+    "@babel/preset-typescript": "7.3.3",
+    "babel-jest": "24.7.1",
+    "coveralls": "3.0.3",
+    "jest": "24.7.1",
+    "np": "4.0.2",
+    "terser-webpack-plugin": "1.2.3",
+    "ts-loader": "5.3.3",
+    "tslint": "5.15.0",
+    "typescript": "3.4.3",
+    "webpack": "4.29.6",
+    "webpack-cli": "3.3.0"
+  }
+}
