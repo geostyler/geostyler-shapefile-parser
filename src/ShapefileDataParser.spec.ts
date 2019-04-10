@@ -69,24 +69,55 @@ beforeEach(() => {
   parser = new ShapefileDataParser();
 });
 
-it('ShapefileDataParser is defined', () => {
-  expect(ShapefileDataParser).toBeDefined();
-});
+describe('ShapefileDataParser', () => {
 
-describe('ShapefileDataParser implements DataParser', () => {
-
-  it('readData is defined', () => {
-    expect(parser.readData).toBeDefined();
+  it('…is defined', () => {
+    expect(ShapefileDataParser).toBeDefined();
   });
 
-});
+  describe('implements DataParser', () => {
 
-describe('readData implementation', () => {
+    it('…readData is defined', () => {
+      expect(parser.readData).toBeDefined();
+    });
 
-  it('can read a Buffer', async () => {
-    const buffer = readFileSync(path.resolve(__dirname, '../data/point.zip'));
-    const data = await parser.readData(buffer);
-    expect(data).toEqual(expectedData);
   });
 
+  describe('constructor', () => {
+
+    it('…creates a GeoJsonDataParser with the passed projections', () => {
+      const parserWithProjection = new ShapefileDataParser('EPSG:3857', 'EPSG:4326');
+      expect(parserWithProjection._geoJsonParser.sourceProjection).toBe('EPSG:3857');
+      expect(parserWithProjection._geoJsonParser.targetProjection).toBe('EPSG:4326');
+    });
+
+  });
+
+  describe('readData implementation', () => {
+
+    it('…can read a Buffer', async () => {
+      const buffer = readFileSync(path.resolve(__dirname, '../data/point.zip'));
+      const data = await parser.readData(buffer);
+      expect(data).toEqual(expectedData);
+    });
+
+    it('…rejects the promise if called with invalid (Array)Buffer', (done) => {
+      expect.assertions(1);
+      const buffer = new ArrayBuffer(0);
+      parser.readData(buffer)
+        .catch((e) => {
+          expect(e).toBeDefined();
+        }).finally(done);
+    });
+
+    it('…rejects the promise if called with invalid Argument', (done) => {
+      expect.assertions(1);
+      const buffer = undefined as unknown as ArrayBuffer;
+      parser.readData(buffer)
+        .catch((e) => {
+          expect(e).toBeDefined();
+        }).finally(done);
+    });
+
+  });
 });
