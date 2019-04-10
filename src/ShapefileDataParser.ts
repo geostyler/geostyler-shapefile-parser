@@ -33,13 +33,15 @@ export class ShapefileDataParser implements DataParser {
    *
    * @param inputData
    */
-  async readData(array: string | Buffer | ArrayBuffer): Promise<VectorData> {
+  readData(array: Buffer | ArrayBuffer): Promise<VectorData> {
     return new Promise<VectorData>((resolve, reject) => {
       try {
         shpjs(array)
           .then((geojson: any) => {
             if (geojson.type === 'FeatureCollection') {
               resolve(this._geoJsonParser.readData(geojson));
+            } else {
+              reject('Could not get FeatureCollection from shapefile.');
             }
           })
           .catch((e: any) => {
