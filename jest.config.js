@@ -8,6 +8,6 @@ module.exports = {
   },
   "testRegex": "/src/.*\\.spec.(ts|js)$",
   "collectCoverageFrom": [
-    "src/*.{ts}"
+    "src/*.ts"
   ]
 };
