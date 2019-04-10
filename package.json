@@ -1,6 +1,6 @@
 {
   "name": "geostyler-shapefile-parser",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "GeoStyler Data Parser implementation for Shapefile",
   "main": "build/dist/ShapefileDataParser.js",
   "types": "build/dist/ShapefileDataParser.d.ts",
