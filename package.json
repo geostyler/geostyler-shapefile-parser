@@ -54,7 +54,7 @@
     "jest": "^24.7.1",
     "np": "^5.0.3",
     "terser-webpack-plugin": "^2.0.0",
-    "ts-loader": "^5.3.3",
+    "ts-loader": "^6.2.0",
     "tslint": "^5.15.0",
     "typescript": "^3.4.3",
     "webpack": "^4.35.2",
