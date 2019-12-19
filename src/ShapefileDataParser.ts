@@ -1,8 +1,6 @@
 import { DataParser, VectorData } from 'geostyler-data';
-import { GeoJSON } from 'geojson';
 import GeoJsonDataParser from 'geostyler-geojson-parser';
-// @ts-ignore // Typing is currently wrong. See PR: https://github.com/DefinitelyTyped/DefinitelyTyped/pull/34623
-import shpjs from 'shpjs';
+const shpjs = require('shpjs');
 
 /**
  *
@@ -29,7 +27,7 @@ export class ShapefileDataParser implements DataParser {
   readData(array: Buffer | ArrayBuffer): Promise<VectorData> {
     return new Promise<VectorData>((resolve, reject) => {
       shpjs(array)
-        .then((geojson: GeoJSON) => {
+        .then((geojson: any) => {
             resolve(this._geoJsonParser.readData(geojson));
         })
         .catch((e: any) => {
