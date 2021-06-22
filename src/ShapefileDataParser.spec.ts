@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import ShapefileDataParser from './ShapefileDataParser';
 import { readFileSync } from 'fs';
 import * as path from 'path';
@@ -112,7 +113,7 @@ describe('ShapefileDataParser', () => {
 
     it('…rejects the promise if called with invalid Argument', (done) => {
       expect.assertions(1);
-      const buffer = undefined as unknown as ArrayBuffer;
+      const buffer: ArrayBuffer = undefined;
       parser.readData(buffer)
         .catch((e) => {
           expect(e).toBeDefined();
