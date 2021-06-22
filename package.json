@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/geostyler/geostyler-shapefile-parser#readme",
   "dependencies": {
-    "@types/jest": "^24.0.18",
+    "@types/jest": "^26.0.23",
     "@types/node": "^12.7.12",
     "@types/shpjs": "^3.4.0",
     "geostyler-data": "^1.0.0",
@@ -42,20 +42,20 @@
     "release": "np --no-yarn && git push https://github.com/geostyler/geostyler-shapefile-parser.git master"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
-    "@babel/polyfill": "^7.6.0",
-    "@babel/preset-env": "^7.6.3",
-    "@babel/preset-typescript": "^7.6.0",
-    "babel-jest": "^24.9.0",
+    "@babel/core": "^7.14.6",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.14.7",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-typescript": "^7.14.5",
+    "babel-jest": "^27.0.2",
+    "core-js": "^3.15.0",
     "coveralls": "^3.0.7",
-    "jest": "^24.9.0",
+    "jest": "^27.0.4",
     "np": "^5.1.1",
     "terser-webpack-plugin": "^2.3.1",
     "ts-loader": "^6.2.0",
     "tslint": "^5.20.0",
-    "typescript": "^3.6.4",
+    "typescript": "^4.3.4",
     "webpack": "^4.41.4",
     "webpack-cli": "^3.3.9"
   }
