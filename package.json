@@ -27,16 +27,15 @@
   "homepage": "https://github.com/geostyler/geostyler-shapefile-parser#readme",
   "dependencies": {
     "@types/jest": "^26.0.23",
-    "@types/node": "^12.7.12",
+    "@types/node": "^14.17.3",
     "@types/shpjs": "^3.4.0",
     "geostyler-data": "^1.0.0",
     "geostyler-geojson-parser": "^1.0.1",
-    "shpjs": "^3.4.3"
+    "shpjs": "^3.6.3"
   },
   "scripts": {
     "build": "tsc -p tsconfig.json && npm run build:browser",
     "build:browser": "webpack --config browser-build.config.js",
-    "pretest": "npm run lint",
     "test": "jest",
     "lint": "tslint --project tsconfig.json --config tslint.json",
     "release": "np --no-yarn && git push https://github.com/geostyler/geostyler-shapefile-parser.git master"
@@ -49,7 +48,7 @@
     "@babel/preset-typescript": "^7.14.5",
     "babel-jest": "^27.0.2",
     "core-js": "^3.15.0",
-    "coveralls": "^3.0.7",
+    "coveralls": "^3.1.0",
     "jest": "^27.0.4",
     "np": "^5.1.1",
     "terser-webpack-plugin": "^2.3.1",
