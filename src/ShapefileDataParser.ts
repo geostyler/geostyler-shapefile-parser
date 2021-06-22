@@ -28,7 +28,7 @@ export class ShapefileDataParser implements DataParser {
     return new Promise<VectorData>((resolve, reject) => {
       shpjs(array)
         .then((geojson: any) => {
-            resolve(this._geoJsonParser.readData(geojson));
+          resolve(this._geoJsonParser.readData(geojson));
         })
         .catch((e: any) => {
           reject(e);

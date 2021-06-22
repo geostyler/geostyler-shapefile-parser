@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import ShapefileDataParser from './ShapefileDataParser';
 import { readFileSync } from 'fs';
 import * as path from 'path';
