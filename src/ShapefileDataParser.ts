@@ -1,6 +1,6 @@
 import { DataParser, VectorData } from 'geostyler-data';
 import GeoJsonDataParser from 'geostyler-geojson-parser';
-const shpjs = require('shpjs');
+import shpjs from 'shpjs';
 
 /**
  *

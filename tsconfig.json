@@ -2,25 +2,24 @@
   "compilerOptions": {
     "baseUrl": ".",
     "declaration": true,
-    "outDir": "build/dist",
-    "module": "commonjs",
-    "target": "es5",
-    "lib": ["es6", "dom"],
+    "outDir": "dist",
+    "module": "ES2022",
+    "target": "ES2022",
+    "lib": ["ES2022", "dom"],
     "sourceMap": true,
     "inlineSources": true,
-    "moduleResolution": "node",
+    "moduleResolution": "Bundler",
     "rootDir": "src",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true
   },
   "exclude": [
     "node_modules",
-    "build",
+    "dist",
     "scripts",
     "acceptance-tests",
     "coverage",
@@ -28,6 +27,8 @@
     "jest",
     "**/*.spec.ts",
     "browser",
-    "browser-build.config.js"
+    "browser-build.config.js",
+    "vite.config.ts",
+    "vitest.config.ts"
   ]
 }
