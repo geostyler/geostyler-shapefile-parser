@@ -2,6 +2,7 @@
 import ShapefileDataParser from './ShapefileDataParser';
 import { readFileSync } from 'fs';
 import * as path from 'path';
+import { beforeEach, describe, expect, it } from 'vitest';
 
 let parser: ShapefileDataParser;
 
@@ -102,22 +103,24 @@ describe('ShapefileDataParser', () => {
       expect(data).toEqual(expectedData);
     });
 
-    it('…rejects the promise if called with invalid (Array)Buffer', (done) => {
+    it('…rejects the promise if called with invalid (Array)Buffer', async () => {
       expect.assertions(1);
       const buffer = new ArrayBuffer(0);
-      parser.readData(buffer)
-        .catch((e) => {
-          expect(e).toBeDefined();
-        }).finally(done);
+      try {
+        await parser.readData(buffer);
+      } catch (e) {
+        expect(e).toBeDefined();
+      }
     });
 
-    it('…rejects the promise if called with invalid Argument', (done) => {
+    it('…rejects the promise if called with invalid Argument', async () => {
       expect.assertions(1);
-      const buffer: ArrayBuffer = undefined;
-      parser.readData(buffer)
-        .catch((e) => {
-          expect(e).toBeDefined();
-        }).finally(done);
+      const buffer = undefined;
+      try {
+        await parser.readData(buffer as any);
+      } catch (e) {
+        expect(e).toBeDefined();
+      }
     });
 
   });
